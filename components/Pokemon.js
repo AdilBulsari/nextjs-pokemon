@@ -1,22 +1,23 @@
 import Link from "next/link";
-import React from "react";
+import Image from "next/image";
 
-export default function Pokemon({ initialPokemons }) {
+export default function Pokemon({ pokemon, index }) {
+  const pokeIndex = ("000" + (index + 1)).slice(-3);
   return (
-    <div>
-      <div className="bg-black-100 m-3 grid gap-5 grid-cols-4 grid-rows-3">
-        {initialPokemons.results.map((ele, i) => (
-          <Link
-            key={ele.name + i}
-            className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-            href={`/pokemons/${ele.name}`}
-          >
-            <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {ele.name}
-            </p>
-          </Link>
-        ))}
-      </div>
-    </div>
+    <Link
+      className="block flex flex-col justify-center border rounded shadow hover:bg-gray-100 dark:bg-gray-900 dark:border-gray-700 dark:hover:bg-gray-600"
+      href={`/pokemons/${pokemon.name}`}
+    >
+      <Image
+        className="m-9"
+        src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokeIndex}.png`}
+        alt={`${pokemon.name}`}
+        width={200}
+        height={200}
+      />
+      <p className="uppercase subpixel-antialiased text-amber-400 text-center m-2 tracking-widest font-bold">
+        {pokemon.name}
+      </p>
+    </Link>
   );
 }

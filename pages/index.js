@@ -1,7 +1,13 @@
 import Pokemon from "@/components/Pokemon";
 
 export default function Home({ initials }) {
-  return <Pokemon initialPokemons={initials} />;
+  return (
+    <div className="m-5 grid gap-5 grid-cols-5">
+      {initials.results.map((ele, index) => (
+        <Pokemon key={index} pokemon={ele} index={index} />
+      ))}
+    </div>
+  );
 }
 
 export async function getStaticProps(context) {
