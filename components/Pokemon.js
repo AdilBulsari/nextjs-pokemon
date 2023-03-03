@@ -9,6 +9,7 @@ export default function Pokemon({ pokemon, index }) {
       href={`/pokemon/${pokemon.name}`}
     >
       <Image
+        priority
         className="m-9 flex justify-center"
         src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${pokeIndex}.png`}
         alt={`${pokemon.name}`}

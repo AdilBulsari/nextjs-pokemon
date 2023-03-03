@@ -10,18 +10,23 @@ export default function PokeDetails({ index, details }) {
           key={ele.slot}
           className="bg-blue-100 text-blue-800 text-l font-medium m-2 h-10 px-3.5 py-1.5 rounded dark:bg-blue-900 dark:text-blue-300"
         >
-          {ele.ability.name}
+          {ele.ability["name"]}
         </span>
       );
     });
   };
 
   const displayStats = () => {
-    return details.abilities.map((ele) => {
+    return details.stats.map((ele) => {
       return (
-        <span className="bg-blue-100 text-blue-800 text-l font-medium m-2 h-10 px-3.5 py-1.5 rounded dark:bg-blue-900 dark:text-blue-300">
-          {ele.ability.name}
-        </span>
+        <div className="bg-blue-100 text-blue-800 text-l font-medium m-2 h-10 px-3.5 py-1.5 rounded dark:bg-blue-900 dark:text-blue-300">
+          <div
+            style={{ width: `${ele["base_stat"]}%` }}
+            className="bg-slate-900 text-center"
+          >
+            {ele["base_stat"]}
+          </div>
+        </div>
       );
     });
   };
@@ -30,6 +35,7 @@ export default function PokeDetails({ index, details }) {
     <div className=" flex bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700">
       <Image
         className="rounded-t-lg"
+        priority
         src={`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${index}.png`}
         alt={`${details.name}`}
         width={600}
@@ -44,6 +50,9 @@ export default function PokeDetails({ index, details }) {
         </Link>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           Abilities : {displayAbilities()}
+        </p>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          Stats : {displayStats()}
         </p>
 
         <Link
