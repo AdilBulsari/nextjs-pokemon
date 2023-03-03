@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }) {
         <Link href="/" className="flex items-center">
           <Image
             priority
-            src="https://upload.wikimedia.org/wikipedia/commons/9/98/International_Pok%C3%A9mon_logo.svg"
+            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2273a93f-836e-4ba7-9245-615da889cc91/daabtts-7c835802-47f7-4259-af2b-2610b9e0aa05.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzIyNzNhOTNmLTgzNmUtNGJhNy05MjQ1LTYxNWRhODg5Y2M5MVwvZGFhYnR0cy03YzgzNTgwMi00N2Y3LTQyNTktYWYyYi0yNjEwYjllMGFhMDUucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.0Ulw7PuNVOxLS9KRleY6TTex8KHd36pJOMnTv2SVLH4"
             alt="Pokemon Logo"
             height={150}
             width={150}
