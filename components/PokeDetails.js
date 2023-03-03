@@ -27,7 +27,7 @@ export default function PokeDetails({ index, details }) {
             className="bg-blue-100 text-blue-800 text-l font-medium m-2 h-10 px-3.5 py-1.5 rounded dark:bg-blue-900 dark:text-blue-300"
             style={{ width: `${ele["base_stat"]}%` }}
           >
-            <div className="bg-slate-900 text-center">{ele["base_stat"]}%</div>
+            <div className="bg-slate-900 text-center">{ele["base_stat"]}</div>
           </div>
         </div>
       );
