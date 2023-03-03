@@ -5,7 +5,7 @@ export default function Pokemon({ pokemon, index }) {
   const pokeIndex = ("000" + (index + 1)).slice(-3);
   return (
     <Link
-      className="block flex flex-col justify-center border rounded shadow hover:bg-gray-100 dark:bg-gray-900 dark:border-gray-700 dark:hover:bg-gray-600"
+      className="flex m-5 flex-col justify-center border rounded shadow hover:bg-gray-100 dark:bg-gray-900 dark:border-gray-700 dark:hover:bg-gray-600"
       href={`/pokemons/${pokemon.name}`}
     >
       <Image
