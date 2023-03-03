@@ -38,7 +38,7 @@ export default function PokeDetails({ index, details }) {
   };
 
   return (
-    <div className="flex bg-white justify-around border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="flex justify-around border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700">
       <Image
         className="rounded-t-lg"
         priority
@@ -60,10 +60,9 @@ export default function PokeDetails({ index, details }) {
         <div className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           Stats : {displayStats()}
         </div>
-
         <Link
           href={"/"}
-          className="inline-flex items-center px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium rounded-md"
+          className="inline-flex ml-20 m-10 items-center px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium rounded-md"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

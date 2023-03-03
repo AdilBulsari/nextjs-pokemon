@@ -14,8 +14,8 @@ export default function Home({ initials }) {
   };
 
   return (
-    <div className="dark:bg-gray-800">
-      <div className="m-5 grid gap-15 grid-cols-5">
+    <div className="dark:bg-gray-800 -m-5">
+      <div className="m-5 grid flex justify-center gap-15">
         {pokemon.results.map((singlePokemon, index) => (
           <Pokemon key={index} pokemon={singlePokemon} index={index + offset} />
         ))}
