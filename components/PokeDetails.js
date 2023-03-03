@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
 export default function PokeDetails({ index, details }) {
@@ -19,18 +20,14 @@ export default function PokeDetails({ index, details }) {
   const displayStats = () => {
     return details.stats.map((ele) => {
       return (
-        <div className="text-center">
+        <div key={ele.stat.name + 1} className="text-left">
           <p>{ele.stat.name.toUpperCase()}</p>
           <div
             key={ele.stat.name}
             className="bg-blue-100 text-blue-800 text-l font-medium m-2 h-10 px-3.5 py-1.5 rounded dark:bg-blue-900 dark:text-blue-300"
+            style={{ width: `${ele["base_stat"]}%` }}
           >
-            <div
-              style={{ width: `${ele["base_stat"]}%` }}
-              className="bg-slate-900 text-center"
-            >
-              {ele["base_stat"]}
-            </div>
+            <div className="bg-slate-900 text-center">{ele["base_stat"]}%</div>
           </div>
         </div>
       );
@@ -48,16 +45,16 @@ export default function PokeDetails({ index, details }) {
         height={600}
       />
 
-      <div className="p-5">
-        <Link href="#">
+      <div className="p-5 w-2/4">
+        <div>
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {details.name.toUpperCase()}: {index}
           </h5>
-        </Link>
+        </div>
         <div className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           Abilities : {displayAbilities()}
         </div>
-        <div className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <div className="mb-3 font-normal w-full text-gray-700 dark:text-gray-400">
           Stats : {displayStats()}
         </div>
         <Link
