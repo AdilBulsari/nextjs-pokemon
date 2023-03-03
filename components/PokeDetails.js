@@ -19,12 +19,18 @@ export default function PokeDetails({ index, details }) {
   const displayStats = () => {
     return details.stats.map((ele) => {
       return (
-        <div className="bg-blue-100 text-blue-800 text-l font-medium m-2 h-10 px-3.5 py-1.5 rounded dark:bg-blue-900 dark:text-blue-300">
+        <div className="text-center">
+          <p>{ele.stat.name.toUpperCase()}</p>
           <div
-            style={{ width: `${ele["base_stat"]}%` }}
-            className="bg-slate-900 text-center"
+            key={ele.stat.name}
+            className="bg-blue-100 text-blue-800 text-l font-medium m-2 h-10 px-3.5 py-1.5 rounded dark:bg-blue-900 dark:text-blue-300"
           >
-            {ele["base_stat"]}
+            <div
+              style={{ width: `${ele["base_stat"]}%` }}
+              className="bg-slate-900 text-center"
+            >
+              {ele["base_stat"]}
+            </div>
           </div>
         </div>
       );
@@ -32,7 +38,7 @@ export default function PokeDetails({ index, details }) {
   };
 
   return (
-    <div className=" flex bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="flex bg-white justify-around border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700">
       <Image
         className="rounded-t-lg"
         priority
@@ -48,12 +54,12 @@ export default function PokeDetails({ index, details }) {
             {details.name.toUpperCase()}: {index}
           </h5>
         </Link>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        <div className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           Abilities : {displayAbilities()}
-        </p>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+        </div>
+        <div className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           Stats : {displayStats()}
-        </p>
+        </div>
 
         <Link
           href={"/"}
