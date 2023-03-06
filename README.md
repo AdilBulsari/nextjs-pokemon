@@ -1,6 +1,6 @@
 # Pokemon Adventure
 
-Pokemon Adventure is an simple nextjs app which list out all pokemons and details (stats and abilities).
+Pokemon Adventure is an simple nextjs app which list out all pokemons, search the pokemon and view details of pokemon (stats and abilities).
 
 ## Tech
 
